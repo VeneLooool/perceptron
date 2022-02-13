@@ -129,9 +129,9 @@ int main()
 				cout << epoch<<" "<<dataSet[iter][2] << " ";
 				cout << perceptron.ans << " ";
 				cout << perceptron.errorAns<< " curent time:" <<clock() - startTime<< "ms" << endl;
-			}
+			}	
 			perceptron.learning();
 		}
 	}
-	//cout<<clock() - startTime << "ms" << endl;
+	cout<<clock() - startTime << "ms" << endl;
 }
