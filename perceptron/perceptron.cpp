@@ -4,6 +4,7 @@
 #include <math.h>
 #include <ctime>
 #include <thread>
+#include <mutex>
 
 using namespace std;
 
@@ -111,6 +112,7 @@ public:
 };
 
 
+
 int main()
 {
 	unsigned int startTime = clock();
@@ -121,11 +123,11 @@ int main()
 	Perceprtron perceptron(0.5, 0.3);
 	perceptron.initialization();
 	perceptron.fillWeightRand();
-	for (int epoch = 0; epoch <= 20000; epoch++) {
+	for (int epoch = 0; epoch <= 2000; epoch++) {
 		for (int iter = 0; iter < dataSet.size(); iter++) {
 			perceptron.inputdata(dataSet[iter]);
 			perceptron.iteration();
-			if (epoch % 20000 == 0) {
+			if (epoch % 2000 == 0) {
 				cout << epoch<<" "<<dataSet[iter][2] << " ";
 				cout << perceptron.ans << " ";
 				cout << perceptron.errorAns<< " curent time:" <<clock() - startTime<< "ms" << endl;
